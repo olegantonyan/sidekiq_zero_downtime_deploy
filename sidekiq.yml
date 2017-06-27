@@ -2,6 +2,7 @@
 ---
 :verbose: true
 :concurrency: 1
+:logfile: ./sidekiq.log
 
 # Sidekiq will run this file through ERB when reading it so you can
 # even put in dynamic logic, like a host-specific queue.
@@ -16,6 +17,6 @@ production:
 
 staging:
   :concurrency: 2
-  
+
 development:
   :concurrency: 2

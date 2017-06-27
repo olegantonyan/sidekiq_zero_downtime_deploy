@@ -1,8 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.1.1)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
+    method_source (0.8.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -12,11 +18,13 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (~> 3.2, >= 3.2.1)
+    slop (3.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   sidekiq (~> 4.2.9)
 
 BUNDLED WITH
