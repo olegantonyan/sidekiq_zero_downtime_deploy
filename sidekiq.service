@@ -27,7 +27,7 @@ After=syslog.target network.target
 Type=simple
 WorkingDirectory=/home/user/sidekiq_zero_downtime_deploy
 # If you use rbenv:
-ExecStart=/bin/bash -lc 'bundle exec sidekiq -e production -r ./job.rb --config ./sidekiq.yml'
+ExecStart=/bin/bash -lc 'bundle exec sidekiq -e production -r ./job.rb --config ./sidekiq.yml -t 995'
 User=user
 Group=user
 UMask=0002
@@ -42,6 +42,8 @@ StandardError=syslog
 
 # This will default to "bundler" if we don't specify it
 SyslogIdentifier=sidekiq
+
+TimeoutStopSec=1000
 
 [Install]
 WantedBy=multi-user.target
